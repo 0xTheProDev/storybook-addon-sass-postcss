@@ -1,10 +1,14 @@
 import type { Configuration, RuleSetRule, RuleSetUseItem } from 'webpack';
 import { logger } from '@storybook/node-logger';
 import postcss from 'postcss';
+import sass from 'sass';
 
 type StyleLoaderOptions = Record<string, unknown>;
 type CssLoaderOptions = Record<string, unknown> & {
   importLoaders?: number;
+};
+type SassLoaderOptions = Record<string, unknown> & {
+  implementation?: typeof sass;
 };
 
 type PostcssLoaderOptions = Record<string, unknown> & {
@@ -14,6 +18,7 @@ type PostcssLoaderOptions = Record<string, unknown> & {
 interface Options {
   styleLoaderOptions?: StyleLoaderOptions | false;
   cssLoaderOptions?: CssLoaderOptions | false;
+  sassLoaderOptions?: SassLoaderOptions | false;
   postcssLoaderOptions?: PostcssLoaderOptions | false;
   rule?: RuleSetRule;
 }
@@ -23,6 +28,7 @@ function wrapLoader(
   options?:
     | StyleLoaderOptions
     | CssLoaderOptions
+    | SassLoaderOptions
     | PostcssLoaderOptions
     | false,
 ): RuleSetUseItem[] {
@@ -37,7 +43,12 @@ export const webpack = (
   webpackConfig: Configuration = {},
   options: Options = {},
 ): Configuration => {
-  const { styleLoaderOptions, postcssLoaderOptions, rule = {} } = options;
+  const {
+    styleLoaderOptions,
+    sassLoaderOptions,
+    postcssLoaderOptions,
+    rule = {},
+  } = options;
 
   let { cssLoaderOptions } = options;
 
@@ -57,6 +68,12 @@ export const webpack = (
 
   logger.info(`=> Using PostCSS preset with postcss@${version}`);
 
+  let regexPattern = /\.css$/;
+
+  if (sassLoaderOptions !== false) {
+    regexPattern = /\.(css|scss|sass)$/i;
+  }
+
   return {
     ...webpackConfig,
     module: {
@@ -64,12 +81,13 @@ export const webpack = (
       rules: [
         ...(webpackConfig.module?.rules ?? []),
         {
-          test: /\.css$/,
+          test: regexPattern,
           sideEffects: true,
           ...rule,
           use: [
             ...wrapLoader(require.resolve('style-loader'), styleLoaderOptions),
             ...wrapLoader(require.resolve('css-loader'), cssLoaderOptions),
+            ...wrapLoader(require.resolve('sass-loader'), sassLoaderOptions),
             ...wrapLoader(
               require.resolve('postcss-loader'),
               postcssLoaderOptions,
