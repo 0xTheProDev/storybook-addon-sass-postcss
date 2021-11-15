@@ -1,20 +1,20 @@
-# Storybook Addon PostCSS
+# Storybook Addon Sass PostCSS
 
-The Storybook PostCSS addon can be used to run the PostCSS preprocessor against your stories in [Storybook](https://storybook.js.org).
+The Storybook PostCSS addon can be used to run the PostCSS preprocessor with Sass support against your stories in [Storybook](https://storybook.js.org).
 
 ## Getting Started
 
-Install this addon by adding the `@storybook/addon-postcss` dependency:
+Install this addon by adding the `storybook-addon-sass-postcss` dependency:
 
 ```sh
-yarn add -D @storybook/addon-postcss
+yarn add -D storybook-addon-sass-postcss
 ```
 
 within `.storybook/main.js`:
 
 ```js
 module.exports = {
-  addons: ['@storybook/addon-postcss'],
+  addons: ['storybook-addon-sass-postcss'],
 };
 ```
 
@@ -45,9 +45,9 @@ Then, you'll need to update your addons config. Within `.storybook/main.js`:
 ```diff
 module.exports = {
   addons: [
--   '@storybook/addon-postcss',
+-   'storybook-addon-sass-postcss',
 +   {
-+     name: '@storybook/addon-postcss',
++     name: 'storybook-addon-sass-postcss',
 +     options: {
 +       postcssLoaderOptions: {
 +         implementation: require('postcss'),
@@ -66,6 +66,6 @@ info => Using PostCSS preset with postcss@8.2.4
 
 ## Loader Options
 
-You can specify loader options for `style-loader`, `css-loader`, and `postcss-loader` by passing options to this addon as `styleLoaderOptions`, `cssLoaderOptions`, or `postcssLoaderOptions` respectively.
+You can specify loader options for `style-loader`, `css-loader`, `sass-loader` and `postcss-loader` by passing options to this addon as `styleLoaderOptions`, `cssLoaderOptions`, `sassLoaderOptions` or `postcssLoaderOptions` respectively.
 
 You can also configure the loader rule by overriding the `rule` option.
