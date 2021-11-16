@@ -13,6 +13,9 @@ describe('webpack hook', () => {
         loader: expect.stringContaining('css-loader'),
       }),
       expect.objectContaining({
+        loader: expect.stringContaining('sass-loader'),
+      }),
+      expect.objectContaining({
         loader: expect.stringContaining('postcss-loader'),
       }),
     ]),
@@ -83,6 +86,7 @@ describe('webpack hook', () => {
     const config = webpack(configFixture, {
       styleLoaderOptions: false,
       cssLoaderOptions: false,
+      sassLoaderOptions: false,
       postcssLoaderOptions: false,
     });
     expect(config.module.rules[0]).toMatchObject({
