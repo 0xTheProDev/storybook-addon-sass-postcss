@@ -11,6 +11,14 @@
     "type": "git",
     "url": "https://github.com/Progyan1997/storybook-addon-sass-postcss.git"
   },
+  "keywords": [
+    "css",
+    "postcss",
+    "sass",
+    "scss",
+    "storybook",
+    "stylesheet"
+  ],
   "engines": {
     "node": ">=10",
     "yarn": "^1.17.0"
