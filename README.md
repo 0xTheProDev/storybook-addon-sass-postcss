@@ -1,5 +1,17 @@
 # Storybook Addon Sass PostCSS
 
+[![Npm Version](https://img.shields.io/npm/v/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
+[![Weekly Downloads](https://img.shields.io/npm/dw/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
+[![Minified Zipped Size](https://img.shields.io/bundlephobia/minzip/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
+[![License](https://img.shields.io/npm/l/storybook-addon-sass-postcss?style=for-the-badge)](https://github.com/Progyan1997/storybook-addon-sass-postcss/LICENSE)
+[![Dependencies](https://img.shields.io/librariesio/release/npm/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
+[![Dependents](https://img.shields.io/librariesio/dependents/npm/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
+[![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/storybook-addon-sass-postcss?style=for-the-badge)](https://github.com/Progyan1997/storybook-addon-sass-postcss/security)
+[![Stars](https://img.shields.io/github/stars/Progyan1997/storybook-addon-sass-postcss?style=for-the-badge)](https://github.com/Progyan1997/storybook-addon-sass-postcss)
+[![Forks](https://img.shields.io/github/forks/Progyan1997/storybook-addon-sass-postcss?style=for-the-badge)](https://github.com/Progyan1997/storybook-addon-sass-postcss)
+
+## Description
+
 The Storybook PostCSS addon can be used to run the PostCSS preprocessor with Sass support against your stories in [Storybook](https://storybook.js.org).
 
 ## Getting Started
