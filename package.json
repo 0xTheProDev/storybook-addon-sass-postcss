@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-sass-postcss",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Storybook addon used to run the PostCSS preprocessor with Sass support against your stories.",
   "author": "Progyan Bhattacharya <bprogyan@gmail.com>",
   "license": "MIT",
