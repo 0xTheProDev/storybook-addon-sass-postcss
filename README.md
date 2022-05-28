@@ -1,7 +1,7 @@
 # Storybook Addon Sass PostCSS
 
 [![Sponsor](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)](https://github.com/sponsors/Progyan1997)
-[![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)](storybook.js.org/addons/storybook-addon-sass-postcss)
+[![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)](https://storybook.js.org/addons/storybook-addon-sass-postcss)
 [![Npm Version](https://img.shields.io/npm/v/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
 [![Weekly Downloads](https://img.shields.io/npm/dw/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
 [![Minified Zipped Size](https://img.shields.io/bundlephobia/minzip/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
