@@ -1,5 +1,7 @@
 # Storybook Addon Sass PostCSS
 
+[![Sponsor](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)](https://github.com/sponsors/Progyan1997)
+[![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)](storybook.js.org/addons/storybook-addon-sass-postcss)
 [![Npm Version](https://img.shields.io/npm/v/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
 [![Weekly Downloads](https://img.shields.io/npm/dw/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
 [![Minified Zipped Size](https://img.shields.io/bundlephobia/minzip/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
@@ -7,8 +9,10 @@
 [![Dependencies](https://img.shields.io/librariesio/release/npm/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
 [![Dependents](https://img.shields.io/librariesio/dependents/npm/storybook-addon-sass-postcss?style=for-the-badge)](https://www.npmjs.com/package/storybook-addon-sass-postcss)
 [![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/storybook-addon-sass-postcss?style=for-the-badge)](https://github.com/Progyan1997/storybook-addon-sass-postcss/security)
-[![Stars](https://img.shields.io/github/stars/Progyan1997/storybook-addon-sass-postcss?style=for-the-badge)](https://github.com/Progyan1997/storybook-addon-sass-postcss)
-[![Forks](https://img.shields.io/github/forks/Progyan1997/storybook-addon-sass-postcss?style=for-the-badge)](https://github.com/Progyan1997/storybook-addon-sass-postcss)
+[![Open Issues](https://img.shields.io/github/issues-raw/Progyan1997/storybook-addon-sass-postcss?style=for-the-badge)](https://github.com/Progyan1997/storybook-addon-sass-postcss/issues)
+[![Closed Issues](https://img.shields.io/github/issues-closed-raw/Progyan1997/storybook-addon-sass-postcss?style=for-the-badge)](https://github.com/Progyan1997/storybook-addon-sass-postcss/issues?q=is%3Aissue+is%3Aclosed)
+[![Stars](https://img.shields.io/github/stars/Progyan1997/storybook-addon-sass-postcss?style=for-the-badge)](https://github.com/Progyan1997/storybook-addon-sass-postcss/stargazers)
+[![Forks](https://img.shields.io/github/forks/Progyan1997/storybook-addon-sass-postcss?style=for-the-badge)](https://github.com/Progyan1997/storybook-addon-sass-postcss/network/members)
 
 ## Description
 
@@ -104,8 +108,26 @@ module.exports = {
 }
 ```
 
+## Sass Only
+
+Be default, this plugin will try to transform both CSS and SASS modules. You can change this behaviour by passing _optional_ argument `rule`.
+
+```diff
+module.exports = {
+  addons: [
+-   'storybook-addon-sass-postcss',
++   {
++     name: 'storybook-addon-sass-postcss',
++     options: {
++       rule: {
++         test: /\.(scss|sass)$/i,
++       },
++     },
++   },
+  ]
+}
+```
+
 ## Loader Options
 
 You can specify loader options for `style-loader`, `css-loader`, `sass-loader` and `postcss-loader` by passing options to this addon as `styleLoaderOptions`, `cssLoaderOptions`, `sassLoaderOptions` or `postcssLoaderOptions` respectively.
-
-You can also configure the loader rule by overriding the `rule` option.
