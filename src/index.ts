@@ -6,6 +6,7 @@ import sass from 'sass';
 type StyleLoaderOptions = Record<string, unknown>;
 type CssLoaderOptions = Record<string, unknown> & {
   importLoaders?: number;
+  modules?: Record<string, string>;
 };
 type SassLoaderOptions = Record<string, unknown> & {
   implementation?: typeof sass;
@@ -16,11 +17,12 @@ type PostcssLoaderOptions = Record<string, unknown> & {
 };
 
 interface Options {
-  styleLoaderOptions?: StyleLoaderOptions | false;
   cssLoaderOptions?: CssLoaderOptions | false;
-  sassLoaderOptions?: SassLoaderOptions | false;
+  loadSassAfterPostCSS?: boolean;
   postcssLoaderOptions?: PostcssLoaderOptions | false;
   rule?: RuleSetRule;
+  sassLoaderOptions?: SassLoaderOptions | false;
+  styleLoaderOptions?: StyleLoaderOptions | false;
 }
 
 function wrapLoader(
@@ -44,9 +46,10 @@ export const webpack = (
   options: Options = {},
 ): Configuration => {
   const {
-    styleLoaderOptions,
-    sassLoaderOptions,
+    loadSassAfterPostCSS = false,
     postcssLoaderOptions,
+    sassLoaderOptions,
+    styleLoaderOptions,
     rule = {},
   } = options;
 
@@ -87,11 +90,16 @@ export const webpack = (
           use: [
             ...wrapLoader(require.resolve('style-loader'), styleLoaderOptions),
             ...wrapLoader(require.resolve('css-loader'), cssLoaderOptions),
-            ...wrapLoader(require.resolve('sass-loader'), sassLoaderOptions),
+            ...(!loadSassAfterPostCSS
+              ? wrapLoader(require.resolve('sass-loader'), sassLoaderOptions)
+              : []),
             ...wrapLoader(
               require.resolve('postcss-loader'),
               postcssLoaderOptions,
             ),
+            ...(loadSassAfterPostCSS
+              ? wrapLoader(require.resolve('sass-loader'), sassLoaderOptions)
+              : []),
           ],
         },
       ],

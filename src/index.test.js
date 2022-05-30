@@ -105,4 +105,14 @@ describe('webpack hook', () => {
       sideEffects: false,
     });
   });
+
+  test('it allows Sass loader to be placed at the end', () => {
+    const configFixture = {};
+    const config = webpack(configFixture, {
+      loadSassAfterPostCSS: true,
+    });
+    expect(config.module.rules[0].use[3]).toMatchObject({
+      loader: expect.stringContaining('sass-loader'),
+    });
+  });
 });

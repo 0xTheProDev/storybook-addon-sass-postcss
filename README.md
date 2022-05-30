@@ -128,6 +128,24 @@ module.exports = {
 }
 ```
 
+### Using with TailwindCSS
+
+By default, Sass loading is done before PostCSS preprocessing. But this does not work well with TailwindCSS. As it relies on classnames and non-standard behaviours that are only exposed via PostCSS plugin. So to overcome this, Sass must be loaded after preprocessing has been done.
+
+```diff
+module.exports = {
+  addons: [
+-   'storybook-addon-sass-postcss',
++   {
++     name: 'storybook-addon-sass-postcss',
++     options: {
++       loadSassAfterPostCSS: true,
++     },
++   },
+  ]
+}
+```
+
 ## Loader Options
 
 You can specify loader options for `style-loader`, `css-loader`, `sass-loader` and `postcss-loader` by passing options to this addon as `styleLoaderOptions`, `cssLoaderOptions`, `sassLoaderOptions` or `postcssLoaderOptions` respectively.
