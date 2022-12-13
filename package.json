@@ -5,11 +5,11 @@
   "author": "Progyan Bhattacharya <bprogyan@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Progyan1997/storybook-addon-sass-postcss/issues"
+    "url": "https://github.com/0xTheProDev/storybook-addon-sass-postcss/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Progyan1997/storybook-addon-sass-postcss.git"
+    "url": "https://github.com/0xTheProDev/storybook-addon-sass-postcss.git"
   },
   "keywords": [
     "css",
