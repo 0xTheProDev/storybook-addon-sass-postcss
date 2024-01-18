@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.4
+
+- Upgrade Dependencies.
+
 ## v0.1.3
 
 - Add Customisation to compile Sass after PostCSS processing.

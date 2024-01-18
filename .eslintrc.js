@@ -4,8 +4,8 @@ const off = 0;
 
 module.exports = {
   root: true,
-  extends: ['airbnb', 'plugin:jest/recommended', 'prettier', 'prettier/react'],
-  parser: 'babel-eslint',
+  extends: ['airbnb', 'plugin:jest/recommended', 'prettier'],
+  parser: '@babel/eslint-parser',
   env: {
     es6: true,
     node: true,
@@ -23,7 +23,6 @@ module.exports = {
       extends: [
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        'prettier/@typescript-eslint',
       ],
       parser: '@typescript-eslint/parser',
       parserOptions: {
