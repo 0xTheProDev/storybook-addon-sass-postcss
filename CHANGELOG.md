@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.0
+
+- Make `storybook@8` compatible according to the [Migration Guide](https://storybook.js.org/docs/8.0/addons/addon-migration-guide#key-changes-for-addons).
+
 ## v0.1.4
 
 - Upgrade Dependencies.

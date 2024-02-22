@@ -18,6 +18,8 @@
 
 The Storybook PostCSS addon can be used to run the PostCSS preprocessor with Sass support against your stories in [Storybook](https://storybook.js.org).
 
+> :beginner: **Use of Storybook v8 is strongly suggested with this addon since v0.2; The addon might be compatible with older Storybook versions as well but will no longer be extensively tested against.**
+
 ## Getting Started
 
 Install this addon by adding the `storybook-addon-sass-postcss` dependency:
@@ -26,7 +28,7 @@ Install this addon by adding the `storybook-addon-sass-postcss` dependency:
 yarn add -D storybook-addon-sass-postcss
 ```
 
-within `.storybook/main.js`:
+Then within `.storybook/main.js`:
 
 ```js
 module.exports = {
@@ -34,7 +36,7 @@ module.exports = {
 };
 ```
 
-and create a PostCSS config in the base of your project, like `postcss.config.js`, that contains:
+And create a PostCSS config in the base of your project, like `postcss.config.js`, that contains:
 
 ```js
 module.exports = {

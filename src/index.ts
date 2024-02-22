@@ -88,17 +88,29 @@ export const webpack = (
           sideEffects: true,
           ...rule,
           use: [
-            ...wrapLoader(require.resolve('style-loader'), styleLoaderOptions),
-            ...wrapLoader(require.resolve('css-loader'), cssLoaderOptions),
+            ...wrapLoader(
+              require.resolve('style-loader').toString(),
+              styleLoaderOptions,
+            ),
+            ...wrapLoader(
+              require.resolve('css-loader').toString(),
+              cssLoaderOptions,
+            ),
             ...(!loadSassAfterPostCSS
-              ? wrapLoader(require.resolve('sass-loader'), sassLoaderOptions)
+              ? wrapLoader(
+                  require.resolve('sass-loader').toString(),
+                  sassLoaderOptions,
+                )
               : []),
             ...wrapLoader(
-              require.resolve('postcss-loader'),
+              require.resolve('postcss-loader').toString(),
               postcssLoaderOptions,
             ),
             ...(loadSassAfterPostCSS
-              ? wrapLoader(require.resolve('sass-loader'), sassLoaderOptions)
+              ? wrapLoader(
+                  require.resolve('sass-loader').toString(),
+                  sassLoaderOptions,
+                )
               : []),
           ],
         },
