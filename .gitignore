@@ -13,6 +13,3 @@ dist
 storybook-static
 example/*/build
 example/*/storybook-static
-
-# Yarn Workspace
-.yarn/install-state.gz
