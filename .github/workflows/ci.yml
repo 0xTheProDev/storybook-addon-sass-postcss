@@ -10,16 +10,11 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
         with:
+          cache: yarn
           node-version-file: .nvmrc
-      - uses: actions/cache@v2
-        with:
-          path: .yarn/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
       - name: Install dependencies
         run: yarn
       - name: Lint all files
@@ -29,16 +24,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
         with:
+          cache: yarn
           node-version-file: .nvmrc
-      - uses: actions/cache@v2
-        with:
-          path: .yarn/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
       - name: Install dependencies
         run: yarn
       - name: Run all tests
@@ -51,18 +41,12 @@ jobs:
       matrix:
         os: [darwin-latest, ubuntu-latest, windows-latest]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
         with:
+          cache: yarn
           node-version-file: .nvmrc
-      - uses: actions/cache@v2
-        with:
-          path: .yarn/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
       - name: Install dependencies
         run: yarn
       - name: Build
-        run: |
-          yarn build
+        run: yarn build
