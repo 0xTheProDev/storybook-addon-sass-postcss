@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.0
+
+- Upgrade Plugin/Loaders for Webpack. This includes upgrading to next major releases of `css-loader`, `postcss-loader`, `sass-loader` and `style-loader`. Kindly check their release notes and/or migration guide if your build pipeline is consuming them.
+
 ## v0.2.0
 
 - Make `storybook@8` compatible according to the [Migration Guide](https://storybook.js.org/docs/8.0/addons/addon-migration-guide#key-changes-for-addons).
@@ -10,7 +14,7 @@
 
 ## v0.1.3
 
-- Add Customisation to compile Sass after PostCSS processing.
+- Add Customization to compile Sass after PostCSS processing.
 - Add Documentation on how to use this with TailwindCSS.
 
 ## v0.1.2
