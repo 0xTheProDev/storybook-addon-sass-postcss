@@ -13,3 +13,6 @@ dist
 storybook-static
 example/*/build
 example/*/storybook-static
+
+# Coverage Reports
+coverage

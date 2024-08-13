@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.1
+
+- Upgrade Build System and Webpack Plugin/Loaders.
+
 ## v0.3.0
 
 - Upgrade Plugin/Loaders for Webpack. This includes upgrading to next major releases of `css-loader`, `postcss-loader`, `sass-loader` and `style-loader`. Kindly check their release notes and/or migration guide if your build pipeline is consuming them.

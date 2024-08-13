@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-sass-postcss",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Storybook addon used to run the PostCSS preprocessor with Sass support against your stories.",
   "author": "Progyan Bhattacharya <bprogyan@gmail.com>",
   "license": "MIT",
@@ -28,15 +28,18 @@
   },
   "main": "dist/index.js",
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist & tsc",
+    "build": "tsup",
     "lint": "yarn lint-code && yarn lint-style -c",
     "lint-code": "eslint '{example,src}/**/*.{js,ts,tsx}'",
     "lint-style": "yarn prettier '{example,src}/**/*.{js,ts,tsx,css,html,json,md,mdx,scss,yml}'",
-    "test": "jest --passWithNoTests",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "test:debug": "vitest --inspect --inspect-brk --logHeapUsage --threads=false",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
     "prepublishOnly": "yarn build"
   },
   "husky": {
@@ -57,42 +60,34 @@
     "@storybook/node-logger": "^8",
     "css-loader": "^7",
     "postcss-loader": "^8",
-    "sass-loader": "^14",
+    "sass-loader": "^16",
     "style-loader": "^4"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.3",
-    "@babel/eslint-parser": "^7.23.3",
-    "@babel/plugin-transform-runtime": "^7.23.3",
-    "@babel/preset-env": "^7.23.3",
-    "@babel/preset-typescript": "^7.23.3",
-    "@types/webpack": "^5",
-    "@types/webpack-env": "^1.18.4",
-    "@typescript-eslint/eslint-plugin": "^6.11.0",
-    "@typescript-eslint/parser": "^6.11.0",
-    "babel-plugin-dynamic-import-node": "^2.3.3",
-    "babel-plugin-require-context-hook": "^1.0.0",
-    "eslint": "^8.54.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-import-resolver-ts": "^0.4.2",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-jest": "^27.6.0",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "@swc/core": "^1.7.10",
+    "@theprodev/eslint-config": "^0.2.0",
+    "@theprodev/prettier-config": "^0.1.0",
+    "@theprodev/tsconfigs": "^0.1.0",
+    "@theprodev/tsup-config": "^0.3.1",
+    "@types/node": "^22.2.0",
+    "@vitest/coverage-v8": "^2.0.5",
+    "eslint": "^9.9.0",
     "husky": "^4.3.8",
-    "jest": "^29.7.0",
     "lint-staged": "^10.5.4",
-    "postcss": "^8.4.33",
-    "prettier": "^2.8.8",
-    "sass": "^1.70.0",
-    "typescript": "^5.2.2",
-    "webpack": "^5"
+    "postcss": "^8.4.41",
+    "prettier": "^3.3.3",
+    "sass": "^1.77.8",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "unplugin-swc": "^1.5.1",
+    "vitest": "^2.0.5",
+    "webpack": "^5.93.0"
   },
   "peerDependencies": {
     "postcss": "^8",
-    "sass": "^1"
+    "sass": "^1",
+    "webpack": "^5.93.0"
   },
+  "prettier": "@theprodev/prettier-config",
   "packageManager": "yarn@4.3.1"
 }

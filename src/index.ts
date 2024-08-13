@@ -1,19 +1,23 @@
-import type { Configuration, RuleSetRule, RuleSetUseItem } from 'webpack';
-import { logger } from '@storybook/node-logger';
-import postcss from 'postcss';
-import sass from 'sass';
+import type { Configuration, RuleSetRule, RuleSetUseItem } from "webpack";
+import { logger } from "@storybook/node-logger";
+import postcss from "postcss";
+import sass from "sass";
+
+type PostCSS = typeof postcss;
+type Sass = typeof sass;
 
 type StyleLoaderOptions = Record<string, unknown>;
 type CssLoaderOptions = Record<string, unknown> & {
   importLoaders?: number;
   modules?: Record<string, string>;
 };
+
 type SassLoaderOptions = Record<string, unknown> & {
-  implementation?: typeof sass;
+  implementation?: Sass;
 };
 
 type PostcssLoaderOptions = Record<string, unknown> & {
-  implementation?: typeof postcss;
+  implementation?: PostCSS;
 };
 
 interface Options {
@@ -55,7 +59,7 @@ export const webpack = (
 
   let { cssLoaderOptions } = options;
 
-  if (typeof cssLoaderOptions === 'object') {
+  if (typeof cssLoaderOptions === "object") {
     cssLoaderOptions = {
       ...cssLoaderOptions,
       importLoaders: 1, // We always need to apply postcss-loader before css-loader
@@ -63,7 +67,7 @@ export const webpack = (
   }
 
   let postcssFactory = postcss;
-  if (typeof postcssLoaderOptions === 'object') {
+  if (typeof postcssLoaderOptions === "object") {
     postcssFactory = postcssLoaderOptions?.implementation ?? postcss;
   }
 
@@ -89,26 +93,26 @@ export const webpack = (
           ...rule,
           use: [
             ...wrapLoader(
-              require.resolve('style-loader').toString(),
+              require.resolve("style-loader").toString(),
               styleLoaderOptions,
             ),
             ...wrapLoader(
-              require.resolve('css-loader').toString(),
+              require.resolve("css-loader").toString(),
               cssLoaderOptions,
             ),
             ...(!loadSassAfterPostCSS
               ? wrapLoader(
-                  require.resolve('sass-loader').toString(),
+                  require.resolve("sass-loader").toString(),
                   sassLoaderOptions,
                 )
               : []),
             ...wrapLoader(
-              require.resolve('postcss-loader').toString(),
+              require.resolve("postcss-loader").toString(),
               postcssLoaderOptions,
             ),
             ...(loadSassAfterPostCSS
               ? wrapLoader(
-                  require.resolve('sass-loader').toString(),
+                  require.resolve("sass-loader").toString(),
                   sassLoaderOptions,
                 )
               : []),
