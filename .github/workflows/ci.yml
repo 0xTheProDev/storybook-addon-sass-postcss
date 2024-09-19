@@ -28,6 +28,7 @@ jobs:
           version-file: .nvmrc
 
       - name: Lint all files
+        shell: bash
         run: yarn lint
 
   # Runs unit tests
@@ -44,6 +45,7 @@ jobs:
           version-file: .nvmrc
 
       - name: Run all tests
+        shell: bash
         run: yarn test
 
   # Ensures all projects can build
@@ -62,5 +64,10 @@ jobs:
           cache: yarn
           version-file: .nvmrc
 
+      - name: Reinstall Dependencies (for each OS)
+        shell: bash
+        run: yarn install
+
       - name: Build
+        shell: bash
         run: yarn build
