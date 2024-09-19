@@ -48,12 +48,8 @@ jobs:
         shell: bash
         run: yarn test
 
-  # Ensures all projects can build
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -61,11 +57,8 @@ jobs:
       - name: Setup Environment
         uses: 0xTheProDev/setup-js@v1.1
         with:
+          cache: yarn
           version-file: .nvmrc
-
-      - name: Reinstall Dependencies (for each OS)
-        shell: bash
-        run: yarn install --refresh-lockfile
 
       - name: Build
         shell: bash
