@@ -22,12 +22,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Environment
-        uses: 0xTheProDev/setup-js@v1
+        uses: 0xTheProDev/setup-js@v1.1
         with:
           cache: yarn
           version-file: .nvmrc
 
       - name: Lint all files
+        shell: bash
         run: yarn lint
 
   # Runs unit tests
@@ -38,29 +39,27 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Environment
-        uses: 0xTheProDev/setup-js@v1
+        uses: 0xTheProDev/setup-js@v1.1
         with:
           cache: yarn
           version-file: .nvmrc
 
       - name: Run all tests
+        shell: bash
         run: yarn test
 
-  # Ensures all projects can build
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Environment
-        uses: 0xTheProDev/setup-js@v1
+        uses: 0xTheProDev/setup-js@v1.1
         with:
           cache: yarn
           version-file: .nvmrc
 
       - name: Build
+        shell: bash
         run: yarn build

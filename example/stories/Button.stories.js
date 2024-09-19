@@ -1,15 +1,15 @@
-import { createButton } from './Button';
+import { createButton } from "./Button";
 
 export default {
-  title: 'Example/Button',
+  title: "Example/Button",
   argTypes: {
-    label: { control: 'text' },
-    primary: { control: 'boolean' },
-    backgroundColor: { control: 'color' },
+    label: { control: "text" },
+    primary: { control: "boolean" },
+    backgroundColor: { control: "color" },
     size: {
-      control: { type: 'select', options: ['small', 'medium', 'large'] },
+      control: { type: "select", options: ["small", "medium", "large"] },
     },
-    onClick: { action: 'onClick' },
+    onClick: { action: "onClick" },
   },
 };
 
@@ -22,22 +22,22 @@ const Template = ({ label, ...args }) => {
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  label: 'Button',
+  label: "Button",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Button',
+  label: "Button",
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'large',
-  label: 'Button',
+  size: "large",
+  label: "Button",
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 'small',
-  label: 'Button',
+  size: "small",
+  label: "Button",
 };

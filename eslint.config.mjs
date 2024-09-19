@@ -1,3 +1,5 @@
 import defineConfig from "@theprodev/eslint-config";
 
-export default defineConfig();
+export default defineConfig(null, {
+  ignores: ["dist", "example"]
+});

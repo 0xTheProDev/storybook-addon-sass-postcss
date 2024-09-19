@@ -1,8 +1,8 @@
-import './page.css';
-import { createHeader } from './Header';
+import "./page.css";
+import { createHeader } from "./Header";
 
 export const createPage = ({ user, onLogout, onLogin, onCreateAccount }) => {
-  const article = document.createElement('article');
+  const article = document.createElement("article");
 
   const header = createHeader({ onLogin, onLogout, onCreateAccount, user });
   article.appendChild(header);
@@ -61,7 +61,7 @@ export const createPage = ({ user, onLogout, onLogin, onCreateAccount }) => {
   </section>
 `;
 
-  article.insertAdjacentHTML('beforeend', section);
+  article.insertAdjacentHTML("beforeend", section);
 
   return article;
 };
