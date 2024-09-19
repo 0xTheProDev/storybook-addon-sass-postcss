@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.2
+
+- Upgrade Dependencies and Security Patches.
+
 ## v0.3.1
 
 - Upgrade Build System and Webpack Plugin/Loaders.
