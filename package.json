@@ -31,6 +31,7 @@
     "dist"
   ],
   "scripts": {
+    "husky-run": "lint-staged",
     "build": "tsup",
     "lint": "yarn lint-code && yarn lint-style -c",
     "lint-code": "eslint '{example,src}/**/*.{js,ts,tsx}'",
