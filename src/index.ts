@@ -1,5 +1,5 @@
 import type { Configuration, RuleSetRule, RuleSetUseItem } from "webpack";
-import { logger } from "@storybook/node-logger";
+import { logger } from "@storybook/core/node-logger";
 import postcss from "postcss";
 import sass from "sass";
 

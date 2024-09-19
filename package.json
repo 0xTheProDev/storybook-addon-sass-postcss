@@ -31,6 +31,7 @@
     "dist"
   ],
   "scripts": {
+    "husky-run": "lint-staged",
     "build": "tsup",
     "lint": "yarn lint-code && yarn lint-style -c",
     "lint-code": "eslint '{example,src}/**/*.{js,ts,tsx}'",
@@ -42,11 +43,6 @@
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "yarn build"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "eslint --fix",
@@ -57,7 +53,7 @@
     ]
   },
   "dependencies": {
-    "@storybook/node-logger": "^8",
+    "@storybook/core": "^8",
     "css-loader": "^7",
     "postcss-loader": "^8",
     "sass-loader": "^16",
@@ -86,7 +82,7 @@
   "peerDependencies": {
     "postcss": "^8",
     "sass": "^1",
-    "webpack": "^5.93.0"
+    "webpack": "^5"
   },
   "prettier": "@theprodev/prettier-config",
   "packageManager": "yarn@4.3.1"

@@ -1,11 +1,11 @@
-import { logger } from "@storybook/node-logger";
+import { logger } from "@storybook/core/node-logger";
 import type { Configuration } from "webpack";
 import postcss from "postcss";
 import sass from "sass";
 
 import { webpack } from "./index";
 
-vi.mock("@storybook/node-logger");
+vi.mock("@storybook/core/node-logger");
 
 describe("webpack hook", () => {
   const loaderMatcher = {
