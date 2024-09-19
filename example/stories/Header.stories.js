@@ -1,11 +1,11 @@
-import { createHeader } from './Header';
+import { createHeader } from "./Header";
 
 export default {
-  title: 'Example/Header',
+  title: "Example/Header",
   argTypes: {
-    onLogin: { action: 'onLogin' },
-    onLogout: { action: 'onLogout' },
-    onCreateAccount: { action: 'onCreateAccount' },
+    onLogin: { action: "onLogin" },
+    onLogout: { action: "onLogout" },
+    onCreateAccount: { action: "onCreateAccount" },
   },
 };
 
