@@ -805,9 +805,11 @@ __metadata:
   linkType: hard
 
 "@storybook/node-logger@npm:^8":
-  version: 8.1.11
-  resolution: "@storybook/node-logger@npm:8.1.11"
-  checksum: 10c0/d2197269fac17bead36b639cd7dd97a76e6a2091a748f8578f2ab76c884d142d0e3ca8d4143b5c41fe9923218cc03700be87876a128cccfbd265abb3913b8ad0
+  version: 8.3.1
+  resolution: "@storybook/node-logger@npm:8.3.1"
+  peerDependencies:
+    storybook: ^8.3.1
+  checksum: 10c0/16d5a74abd3c44ccf91c454e65a55eb62e9655b33d69cf976d3d96ea46342af0e01ea8006a47771f50aaaed67bb54a31ee778b6c9bb0c3967e8e285c3de68420
   languageName: node
   linkType: hard
 
@@ -4933,8 +4935,8 @@ __metadata:
   linkType: hard
 
 "sass-loader@npm:^16":
-  version: 16.0.0
-  resolution: "sass-loader@npm:16.0.0"
+  version: 16.0.1
+  resolution: "sass-loader@npm:16.0.1"
   dependencies:
     neo-async: "npm:^2.6.2"
   peerDependencies:
@@ -4954,7 +4956,7 @@ __metadata:
       optional: true
     webpack:
       optional: true
-  checksum: 10c0/0d2c2ee89a380ae19f1d024008c241afb747c254cf8e2163b281533c803a1cb3933236f0cfbb59a296fce864e4274e32a80c30dadd5b98618a362f0be8bac20f
+  checksum: 10c0/ac841ea8881354e4bf286c2c5f331b60c2edf73c6e4abbc85b954024ec16dfda01accf59ea6fcb4b29ec7dd5a81a9950fc9138dcb262b9130865367201b7699a
   languageName: node
   linkType: hard
 
