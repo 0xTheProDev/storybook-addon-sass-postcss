@@ -1138,8 +1138,8 @@ __metadata:
   linkType: hard
 
 "@storybook/core@npm:^8":
-  version: 8.3.5
-  resolution: "@storybook/core@npm:8.3.5"
+  version: 8.3.6
+  resolution: "@storybook/core@npm:8.3.6"
   dependencies:
     "@storybook/csf": "npm:^0.1.11"
     "@types/express": "npm:^4.17.21"
@@ -1154,7 +1154,7 @@ __metadata:
     semver: "npm:^7.6.2"
     util: "npm:^0.12.5"
     ws: "npm:^8.2.3"
-  checksum: 10c0/f01d13c2309af518f1d029d27a3dd1ce80ea7423c9d4927d1096634a84887051c3581404971499ab81e5b28acca517bf1b31a3281fe7fdb0b418f0c45767f16f
+  checksum: 10c0/75635195335f9f296e830b51e4d71d8f2db833ad1d6b279f9da349dd312307d07c036351cfb421aea2b69c39f11a95343d9d5518432c7d49923237a82c694388
   languageName: node
   linkType: hard
 
