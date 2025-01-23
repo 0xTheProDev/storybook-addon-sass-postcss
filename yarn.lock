@@ -941,8 +941,8 @@ __metadata:
   linkType: hard
 
 "@storybook/core@npm:^8":
-  version: 8.5.0
-  resolution: "@storybook/core@npm:8.5.0"
+  version: 8.5.1
+  resolution: "@storybook/core@npm:8.5.1"
   dependencies:
     "@storybook/csf": "npm:0.1.12"
     better-opn: "npm:^3.0.2"
@@ -960,7 +960,7 @@ __metadata:
   peerDependenciesMeta:
     prettier:
       optional: true
-  checksum: 10c0/378d205527256ef9acaed3e6dc3e27f3669929ebcfd0c567de49c0b2ce1a7fc88588f7f3bd0c9786f9d9e1d68699ee483afadd150c3c04832e5cb503aa8a27be
+  checksum: 10c0/3838b1ce36331927f10c9c11210956752b00c05aa42de77b5551b82273c25d3ae1b7465f50b0c6757e9eb87dfe47bc7aa293225a038328e313e7b2f5a28f768a
   languageName: node
   linkType: hard
 
