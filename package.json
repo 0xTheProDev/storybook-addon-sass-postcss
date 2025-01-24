@@ -85,5 +85,5 @@
     "webpack": "^5"
   },
   "prettier": "@theprodev/prettier-config",
-  "packageManager": "yarn@4.3.1"
+  "packageManager": "yarn@4.6.0"
 }
