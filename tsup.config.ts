@@ -2,7 +2,7 @@ import { defineConfig } from "@theprodev/tsup-config";
 
 export default defineConfig({
   entry: ["src/index.ts"],
-  format: "cjs",
+  format: "esm",
   libOptions: {
     startYear: 2021,
   },

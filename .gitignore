@@ -16,3 +16,12 @@ example/*/storybook-static
 
 # Coverage Reports
 coverage
+
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
