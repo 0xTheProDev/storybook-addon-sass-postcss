@@ -58,7 +58,7 @@
     "@storybook/core": "^8",
     "css-loader": "^7",
     "postcss-loader": "^8",
-    "sass-loader": "^16",
+    "sass-loader": "^17",
     "style-loader": "^4"
   },
   "devDependencies": {
